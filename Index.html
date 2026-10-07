@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwitchCase</title>
+</head>
+<body>
+    
+<script>
+const saldo_cuenta = 500.000;
+let dinero_de_cuenta = 0;
+c = 0
+
+while(bancolombia != 4){
+    var bancolombia = prompt("menu de opciones:\n"+ "1.Consultar saldo\n"+ "2.Retirar dinero\n"+ "3.Consignar Saldo\n"+ "4.Salir");
+    switch(bancolombia){
+        case "1":
+            alert("Su saldo es de: $"+saldo_cuenta);
+            break;
+        case "2":
+            dinero_de_cuenta = parseFloat(prompt("Digite el valor a retirar"));
+            if(dinero_de_cuenta > saldo_cuenta){
+                document.write("Saldo insuficiente");
+            }else{
+                document.write("Retiro exitoso, su nuevo saldo es: "+(saldo_cuenta - dinero_de_cuenta));
+            }
+            break;
+        case "3":
+            dinero_de_cuenta = parseFloat(prompt("Digite el valor a consignar"));
+            document.write("Consignación exitosa, su nuevo saldo es: "+(saldo_cuenta + dinero_de_cuenta));
+            break;
+        default:
+            document.write("Opción no válida");
+    }
+
+}
+</script>
+</body>
+</html>
